@@ -1,0 +1,56 @@
+﻿Version-0.3
+
+Stackable User-Level Filesystem, or SULF, 
+is a pre-existing FUSE binding in C#, started by Valient Gough in 2004.
+http://www.jprl.com/Blog/all.html#entry-development-mono-2006-08-29T11:47:00AM
+http://www.jprl.com/Blog/archive/development/mono/2006/Aug-29.html
+https://github.com/jonpryor/mono-fuse
+https://github.com/jonpryor/elfsharp
+https://github.com/jonpryor/microsoft-authentication-library-for-dotnet
+
+
+
+
+
+http://www.arg0.net/users/vgough/sulf/
+http://web.archive.org/web/20081014202726/http://www.arg0.net/users/vgough/sulf/
+
+http://web.archive.org/web/20070202133420/https://www.arg0.net/users/vgough/sulf/hierarchy.html
+
+http://web.archive.org/web/20060501021427/http://arg0.net/users/vgough/sulf/dir_000003.html
+http://web.archive.org/web/20060501021515/http://arg0.net/users/vgough/sulf/dir_000004.html
+http://web.archive.org/web/20070202120554/http://arg0.net/users/vgough/sulf/dir_000000.html
+
+
+
+
+http://www.arg0.net/users/vgough/sulf/
+http://web.archive.org/web/20081014202726/http://www.arg0.net/users/vgough/sulf/
+
+./configure
+make
+cd examples     
+make run        # run hello-fs example which mounts to /tmp/hellofs
+
+
+https://github.com/PlasticSCM/FuseSharp
+
+
+https://raw.githubusercontent.com/libfuse/libfuse/master/example/hello_ll.c
+https://github.com/libfuse/libfuse/blob/master/include/fuse_lowlevel.h
+https://github.com/libfuse/libfuse/blob/master/example/hello_ll.c
+
+
+https://libfuse.github.io/doxygen/
+https://github.com/libfuse/libfuse/wiki/
+https://libfuse.github.io/doxygen/fast17-vangoor.pdf
+https://libfuse.github.io/doxygen/structfuse__lowlevel__ops.html
+https://www.fsl.cs.stonybrook.edu/docs/fuse/fuse-article-appendices.html
+
+apt-file search fuse_lowlevel.h
+
+libfuse-dev: /usr/include/fuse/fuse_lowlevel.h
+libfuse3-dev: /usr/include/fuse3/fuse_lowlevel.h
+
+# version 2 & 3
+apt-get install libfuse-dev libfuse3-dev

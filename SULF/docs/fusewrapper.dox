@@ -1,0 +1,44 @@
+/*! @page fusewrapper FuseWrapper bindings
+
+@section FuseWrapper FuseWrapper
+
+FuseWrapper provides a C# layer around FUSE structures, and some helper classes
+which help in communicating with the FUSE kernel module.  This is a very
+low-level API and probably not useful to you unless you are hacking Fuse.dll.
+
+The FUSE kernel module (fuse.ko), communicates using various structures which
+are packed into memory in whatever order the C compiler says.  Rather then
+reverse engineer what the packets look like, FuseWrapper provides methods to
+read and write structures to a memory buffer (FWBuffer) in C code, so that it
+should always match, no matter how the compiler does it, whatever byte order,
+etc.
+
+So, when sending data to the kernel, the idea is to allocate the various
+strutcures required for the message (normally a fuse_out_header followed by the
+command specific struct), and then copy them to a buffer, eg:
+
+@code
+
+    FWBuffer buf = ...;
+
+    fuse_out_header header = new fuse_out_header();
+    header.unique = unique;
+    header.error = errorCode;
+
+    header.copyTo( buf );
+
+@endcode
+
+Receiving data would require copying from the buffer to one of the structures
+and then using the struct accessors:
+
+@code
+    FWBuffer buf = ...;
+
+    fuse_in_header header = new fuse_in_header();
+    header.copyFrom( buf );
+
+    Console.WriteLine("serving request number {0}", header.unique);
+@endcode
+
+*/

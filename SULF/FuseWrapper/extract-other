@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+# extract other definitions that are removed by preprocessing, so would have
+# not shown up in fuse-types.h
+# Right now that is only #define statements..
+
+while(<>)
+{
+    if(m/\s*#\s*define\s+(\S+)\s+(.*)$/)
+    {
+	print "#define $1 $2\n";
+	while($_ && m/\\\s*$/)
+	{
+	    $_ = <>;
+	    print;
+	}
+    }
+}
+
+

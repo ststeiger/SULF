@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: RLog#
+Description: Error logging library for C#
+Version: @VERSION@
+Requires:
+Libs: -r:@MONO_LIBPATH@/mono/RLog/RLog.dll
+Cflags: 
+

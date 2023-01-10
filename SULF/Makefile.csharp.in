@@ -1,0 +1,18 @@
+
+CS_DLL = @CSCC@ -g -target:library
+CS_EXE = @CSCC@ -g -target:exe
+
+ALL_REFS = $(LOCAL_REFS) $(SYSTEM_REFS)
+CS_REFS = $(addprefix -L ../,$(LOCAL_REFS)) $(addprefix -r:, $(ALL_REFS))
+CSFLAGS = $(addprefix -pkg:,$(PACKAGE_REFS)) $(CS_REFS)
+LOCAL_DEPS = $(addprefix ../,$(LOCAL_REFS))
+ALL_DEPS = $(SRCS) $(LOCAL_DEPS)
+
+
+# some useful macros
+
+# call with base name (.dll will be appended where necessary)
+install_dll = gacutil -i $1.dll -package $1
+uninstall_dll = gacutil -u $1.dll -package $1
+sign_dll = sn -R $1.dll ~/devel/MonoKey.snk
+

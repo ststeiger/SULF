@@ -1,0 +1,31 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+# SWIG generates intermediate types when it sees things like "__u32" in the
+# code.  So this script will read through a preprocessed header file (gcc -E)
+# and replace the struct fields with their typedefed values.  That way SWIG
+# doesn't have to generate intermediate types..
+
+my %typedefs;
+
+while(<>)
+{
+    # remove tags that swig doesn't deal with..
+    s#__signed__##g;
+
+    if(m#typedef (.*) (\w+)\s*;#)
+    {
+	$typedefs{$2} = $1;
+	next;
+    } elsif (m#(\s*)(\w+)\s+(\w+)\s*;#)
+    {
+	if(exists($typedefs{$2}))
+	{
+	    print "$1" . $typedefs{$2} . " $3;\n";
+	    next;
+	}
+    }
+
+    print;
+}

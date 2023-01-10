@@ -1,0 +1,22 @@
+
+2005.04.28  Valient Gough
+	* major API changes.  API has become simpler and is split into two
+	  libraries. 
+	* The Fuse.dll library communicates with the FUSE kernel module and
+	  provides an API based on simple C# interfaces (Node, FileNode,
+	  DirNode). 
+	* The Sulf.dll library builds on Fuse.dll and provides a more natural
+	  interface to C# objects (a Hashmap can be used as a directory, string
+	  as a file, etc).  
+	* Updated FuseWrapper and Fuse interfaces for FUSE 2.3 (Kernel api
+	  version 6.1)
+
+2005.01.15 Valient Gough
+	* updated FuseWrapper and Fuse interfaces for FUSE 2.1 compatibility.
+	  implemented simple Hello-World filesystem in examples subdirectory,
+	  which is similar to libfuse's example/hello.c
+
+2005.01.13 Valient Gough
+	* release under LGPL license simplify build system to make it easier to
+	  build add snapshot (see Downloads)
+

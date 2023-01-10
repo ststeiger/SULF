@@ -1,0 +1,12 @@
+base referer
+rect $interfaceFuse_1_1DirNode.html 57,93 156,117
+rect $interfaceFuse_1_1FileNode.html 478,93 580,117
+rect $interfaceFuse_1_1MutableNode.html 326,93 454,117
+rect $interfaceFuse_1_1XAttrNode.html 628,93 737,117
+rect $classSulf_1_1GenericNode.html 180,93 302,117
+rect $interfaceFuse_1_1MutableDirNode.html 6,168 153,192
+rect $classSulf_1_1MapFS.html 177,168 262,192
+rect $interfaceFuse_1_1MutableFileNode.html 454,168 604,192
+rect $classSulf_1_1GenericFileNode.html 286,168 430,192
+rect $classSulf_1_1StringNode.html 304,242 413,266
+rect $interfaceFuse_1_1MutableXAttrNode.html 628,168 788,192

@@ -1,0 +1,4 @@
+base referer
+rect $classFileBuffer.html 6,93 73,117
+rect $classFuse_1_1StringArg.html 97,93 201,117
+rect $classFWBuffer.html 225,93 292,117

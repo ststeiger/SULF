@@ -1,0 +1,26 @@
+
+Prepair for build:
+
+    ./configure
+
+
+Build:
+
+    make
+
+Test:
+
+    mkdir /tmp/hellofs
+    cd examples
+    make run
+
+    # in another shell:
+    ls -l /tmp/hellofs
+    cat /tmp/README
+
+
+Install:
+
+### Sorry - this is still development code, I haven't tested the install
+    targets.
+
